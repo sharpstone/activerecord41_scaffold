@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= Integer(ENV['DB_POOL'] || 5) %>
+  reaping_frequency: 10
+  checkout_timeout: 1
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
